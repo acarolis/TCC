@@ -1,3 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+#form-container {
+    margin-right: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+}
+
+input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #200ec8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+#sales-list {
+    max-width: 400px;
+}
+
+#sales-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sales-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
 .header {
     display: flex;
     justify-content: space-between; /* Alinha os itens em extremidades opostas */
@@ -76,4 +133,14 @@ footer {
 
 footer p {
     color: #fff;
+}
+#form-container {
+    margin-right: 20px;
+    border: 1px solid #555;
+    padding: 20px;
+}
+#sales-list {
+    max-width: 400px;
+    border: 1px solid #555;
+    padding: 20px;
 }
