@@ -1,0 +1,79 @@
+.header {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens em extremidades opostas */
+    align-items: center; /* Alinha verticalmente ao centro */
+    background-color:  #200ec8; /* Cor azul */
+    padding: 25px; /* Espaçamento interno aumentado */
+}
+
+.logo img {
+    width: 100px; /* Largura da imagem do logo */
+    height: auto; /* Altura ajustável conforme a largura */
+}
+
+.brand h1 {
+    margin: 10px; /* Remove as margens padrão */
+    color: #fff; /* Cor do texto branco */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 290px ; /* Adicione uma margem à esquerda para mover a lista para o lado */
+}
+
+
+.menu ul li {
+    display: inline; /* Exibe os itens da lista em linha */
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+    
+}
+
+.menu ul li a {
+    text-decoration: none; /* Remove a decoração de link */
+    color: #fff; /* Cor do texto branco */
+    font-weight: bold; /* Texto em negrito */
+}
+
+h1 {
+    display: inline-block; /* Permite que o título compartilhe a linha com a logo */
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140%;
+
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+footer {
+    clear: both; /* Garante que o footer fique abaixo de todo o conteúdo */
+    background-color: #200ec8; /* Adicione um fundo para o rodapé */
+    padding: 20px; /* Adicione um preenchimento para o rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 30px; /* Espaçamento interno aumentado */
+}
+
+footer p {
+    color: #fff;
+}

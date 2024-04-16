@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Estoque</title>
+    <link rel="stylesheet" href="styles2ESTQ.css">
+    <style>
+        .expired {
+            background-color: #ffcccc; /* Vermelho claro */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="brand">
+            <img src="c:\Users\emano\OneDrive\Desktop\tccteste\merca.jpg.png" alt="Logo">
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="mercateste2.html">Inicio</a></li>
+                <li><a href="#">Crédito</a></li>
+                <li><a href="#">Fornecedores</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Gerenciamento de Estoque</h1>
+        
+        <!-- Formulário para adicionar um novo produto -->
+        <form id="productForm">
+            <label for="productName">Nome do Produto:</label>
+            <input type="text" id="productName" name="productName" required>
+            <label for="productQuantity">Quantidade:</label>
+            <input type="number" id="productQuantity" name="productQuantity" required>
+            <label for="productValidity">Validade:</label>
+            <input type="date" id="productValidity" name="productValidity" required>
+            <button type="submit">Adicionar Produto</button>
+        </form>
+
+        <!-- Tabela de estoque -->
+        <table id="stockTable">
+            <thead>
+                <tr>
+                    <th>Nome do Produto</th>
+                    <th>Quantidade</th>
+                    <th>Validade</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas da tabela serão geradas dinamicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Gerenciamento de Estoque Mercado Baltazar</p>
+    </footer>
+
+    <script>
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var productName = document.getElementById('productName').value;
+            var productQuantity = document.getElementById('productQuantity').value;
+            var productValidity = document.getElementById('productValidity').value;
+            if(productName && productQuantity && productValidity) {
+                addProductToTable(productName, productQuantity, productValidity);
+                document.getElementById('productName').value = '';
+                document.getElementById('productQuantity').value = '';
+                document.getElementById('productValidity').value = '';
+            } else {
+                alert('Por favor, preencha todos os campos.');
+            }
+        });
+
+        function addProductToTable(name, quantity, validity) {
+            var tableBody = document.getElementById('stockTable').getElementsByTagName('tbody')[0];
+            var newRow = tableBody.insertRow();
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+            cell1.textContent = name;
+            cell2.textContent = quantity;
+            cell3.textContent = validity;
+
+            // Verifica se a data de validade está no passado
+            var today = new Date();
+            var expirationDate = new Date(validity);
+            if (expirationDate < today) {
+                newRow.classList.add('expired'); // Adiciona a classe 'expired' se a data de validade expirou
+            }
+
+            var button = document.createElement('button');
+            button.textContent = 'Excluir';
+            button.addEventListener('click', function() {
+                var row = this.parentNode.parentNode;
+                var currentQuantity = parseInt(row.cells[1].textContent);
+                var newQuantity = currentQuantity - 1; // Quantidade a ser removida
+                if(newQuantity >= 0) {
+                    row.cells[1].textContent = newQuantity;
+                } else {
+                    alert('A quantidade não pode ser menor que zero.');
+                }
+            });
+            cell4.appendChild(button);
+
+            // Organiza as linhas com base na data de validade
+            var rows = Array.from(tableBody.getElementsByTagName('tr'));
+            rows.sort((a, b) => {
+                var dateA = new Date(a.cells[2].textContent);
+                var dateB = new Date(b.cells[2].textContent);
+                return dateA - dateB;
+            });
+            rows.forEach(row => tableBody.appendChild(row));
+        }
+    </script>
+</body>
+</html>

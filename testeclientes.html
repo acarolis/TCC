@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="stylestesteCLI.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Clientes</h1>
+    </header>
+    
+    <section class="clients">
+        <!-- Clientes existentes -->
+    </section>
+
+    <button id="addClientBtn">Adicionar Cliente</button>
+
+    <div id="addClientForm" style="display: none;">
+        <input type="text" id="clientName" placeholder="Nome do Cliente" required><br>
+        <input type="text" id="clientCPF" placeholder="CPF" required><br>
+        <input type="text" id="clientAddress" placeholder="Endereço" required><br>
+        <input type="text" id="clientPhone" placeholder="Telefone" required><br>
+        <input type="text" id="clientEmail" placeholder="Email" required><br>
+        <!-- Botão para adicionar foto -->
+        <label for="clientPhoto">Foto do Cliente:</label><br>
+        <input type="file" id="clientPhoto" accept="image/*"><br>
+        <button id="submitClientBtn">Adicionar</button>
+    </div>
+
+    <script src="scriptTESTEcli.js"></script>
+    <script>
+        // Permitir apenas números nos campos de CPF e telefone
+        document.getElementById('clientCPF').addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
+
+        document.getElementById('clientPhone').addEventListener('input', function () {
+            this.value = this.value.replace(/\D/g, '');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between; /* Alinha os itens em extremidades opostas */
+    align-items: center; /* Alinha verticalmente ao centro */
+    background-color:  #200ec8; /* Cor azul */
+    padding: 25px; /* Espaçamento interno aumentado */
+}
+
+.logo img {
+    width: 100px; /* Largura da imagem do logo */
+    height: auto; /* Altura ajustável conforme a largura */
+}
+
+.brand h1 {
+    margin: 10px; /* Remove as margens padrão */
+    color: #fff; /* Cor do texto branco */
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 290px ; /* Adicione uma margem à esquerda para mover a lista para o lado */
+}
+
+
+.menu ul li {
+    display: inline; /* Exibe os itens da lista em linha */
+    margin-right: 20px; /* Espaçamento entre os itens do menu */
+    
+}
+
+.menu ul li a {
+    text-decoration: none; /* Remove a decoração de link */
+    color: #fff; /* Cor do texto branco */
+    font-weight: bold; /* Texto em negrito */
+}
+
+h1 {
+    display: inline-block; /* Permite que o título compartilhe a linha com a logo */
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 140%;
+
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+    text-align: center;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #040101;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex; /* Define o container como flexível */
+    justify-content: center; /* Alinha os itens horizontalmente ao centro */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+}
+
+.buttons a {
+    margin: 0 10px; /* Espaçamento entre os botões */
+}
+
+.buttons p {
+    margin: 0 10px; /* Espaçamento entre o texto e os botões */
+    color: white;
+}
+
+.buttons a {
+    display: flex;
+    flex-direction: column; /* Altera a direção do flexbox para coluna */
+    align-items: center; /* Alinha os itens ao centro */
+    text-align: center; /* Alinha o texto ao centro */
+    margin: 0 40px; /* Espaçamento entre os botões */
+}
+
+.btn {
+    background-color: #200ec8;
+    border: 10px solid; /* Adicione 'solid' e uma unidade de medida, como 'px' */
+    color: #200ec8;
+    padding: 20px 42px;
+    text-align: center;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.6s;
+    transition-duration: 0.6s;
+    display: inline-block;
+}
+
+footer {
+    clear: both; /* Garante que o footer fique abaixo de todo o conteúdo */
+    background-color: #200ec8; /* Adicione um fundo para o rodapé */
+    padding: 20px; /* Adicione um preenchimento para o rodapé */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 30px; /* Espaçamento interno aumentado */
+}
+
+footer p {
+    color: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+h2 {
+    text-align: center;
+    margin-top: 50px;
+}
+form {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+label {
+    font-weight: bold;
+}
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
